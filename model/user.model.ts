@@ -16,9 +16,6 @@ export const MessageSchema: Schema<Message> = new Schema({
   },
 });
 
-const MessageModel = (mongoose.models.Message as mongoose.Model<Message>) || (mongoose.model<Message>("Message" , MessageSchema))
-
-
 export interface User extends Document {
   username: string;
   email: string;
@@ -66,6 +63,7 @@ const UserSchema: Schema<User> = new Schema({
 
 });
 
-const UserModal = (mongoose.models.User as mongoose.Model<User>) || (mongoose.model<Message>("User" , UserSchema))
+const UserModal = (mongoose.models.User as mongoose.Model<User>) || (mongoose.model<User>("User" , UserSchema))
+export default UserModal
 
 
