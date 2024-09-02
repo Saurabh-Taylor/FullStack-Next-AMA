@@ -49,7 +49,6 @@ const UserSchema: Schema<User> = new Schema({
   },
   verifyCodeExpiry: {
     type: Date,
-    default: Date.now,
   },
   isVerified: {
     type: Boolean,
