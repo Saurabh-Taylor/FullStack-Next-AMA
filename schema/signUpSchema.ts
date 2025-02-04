@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z    from "zod";
 
 export const usernameValidation = z
   .string()
@@ -8,10 +8,14 @@ export const usernameValidation = z
     message: "Username can only contain letters and numbers",
   });
 
-export const SignUpSchema = z.object({
+export const signUpSchema = z.object({
   username: usernameValidation,
   email: z.string().email({message:"Invalid email address"}),
   password: z
     .string()
     .min(8, { message: "Password must be atleast 8 characters" }),
 });
+
+export type SignUpSchema = z.infer<typeof signUpSchema>;
+
+
